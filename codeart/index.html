@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>code art</title> <!-- Your Name/Website Name Here -->
+    <script type="text/javascript" src="processing.js"></script>
+    <style>
+    div {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    }
+    </style>
+</head> 
+    <body>
+    <header>
+    <ul>
+        </ul>
+        </header>
+          </body>
+    <script type="application/processing">
+    
+float circleX;
+float circleY;
+float circleZ;
+float circleV;
+float circleM;
+PFont f;
+ 
+void setup() {
+  size(1400, 700);
+  background(255, 255, 255);
+  textSize(60);
+}
+
+void draw() {
+  stroke(400);
+  circleX = random(mouseY);
+  circleY = random(mouseX);
+  circleZ = random(mouseY-30);
+  circleV = random(mouseX-50);
+  circleM = random(3*mouseY);
+  fill(random(255), random(209), random(229), random(209));
+   if ((keyPressed == true) && (key == ' ')) {
+  fill(255);
+  rect(0, 0, 1400, 700);
+  } 
+   if ((keyPressed == true) && (key == 'b')) {
+  rect(circleZ, circleV, pmouseX, pmouseY);
+  }
+   if ((keyPressed == true) && (key == 'c')) {
+  ellipse(circleM, circleY, pmouseX, pmouseY);
+  }
+   if ((keyPressed == true) && (key == 'v')) {
+  triangle(circleX, circleY, pmouseY, pmouseX, mouseX, mouseY);
+  }
+  else if ((mousePressed == true)) {
+  fill(0, 0, 0);
+  textSize(16);
+  text("c=circles", 10, 615);
+  text("b=boxes", 10, 640);
+  text("v=triangles", 10, 665);
+  text("space=reset", 10, 690);
+   }
+}
+
+    </script>
+    <canvas> </canvas> 
+    <footer>
+        <p>*click for instructions*</p>
+        <p> &copy;sifihrfm.wav 2018</p>
+        </footer>
+  
+
+</html>
